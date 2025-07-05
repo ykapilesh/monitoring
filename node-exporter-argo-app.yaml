@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/YOUR-GITHUB-REPO'
+    repoURL: 'https://github.com/ykapilesh/monitoring.git'
     targetRevision: HEAD
     path: monitoring/node-exporter
   destination:
