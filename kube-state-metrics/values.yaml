@@ -12,3 +12,7 @@ resources:
   limits:
     cpu: 100m
     memory: 100Mi
+
+prometheus:
+  monitor:
+    enabled: true
