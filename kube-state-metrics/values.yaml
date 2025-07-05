@@ -16,3 +16,6 @@ resources:
 prometheus:
   monitor:
     enabled: true
+
+rbac:
+  create: true
