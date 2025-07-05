@@ -1,0 +1,14 @@
+fullnameOverride: "node-exporter"
+
+service:
+  type: NodePort
+  nodePort: 31090  # pick a free port
+  port: 9100
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 50Mi
+  limits:
+    cpu: 100m
+    memory: 100Mi
