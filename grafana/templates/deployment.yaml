@@ -25,13 +25,6 @@ spec:
         runAsUser: {{ .Values.securityContext.runAsUser }}
         runAsGroup: {{ .Values.securityContext.runAsGroup }}
         fsGroup: {{ .Values.securityContext.fsGroup }}
-      initContainers:
-      - name: init-chown-data
-        image: {{ .Values.initContainer.image }}
-        command: ["chown", "-R", "1001:1001", "/var/lib/grafana"]
-        volumeMounts:
-        - mountPath: /var/lib/grafana
-          name: grafana-storage
       containers:
       - name: grafana
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
