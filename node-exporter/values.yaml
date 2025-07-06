@@ -1,4 +1,5 @@
-fullnameOverride: "node-exporter"
+rbac:
+  create: true
 
 serviceAccount:
   create: true
@@ -7,24 +8,22 @@ serviceAccount:
 service:
   type: NodePort
   port: 9100
-  nodePort: 31090   # Choose a free port on your laptop
+  nodePort: 30100
+
+serviceMonitor:
+  enabled: true
+  interval: 30s
+  scrapeTimeout: 10s
 
 resources:
   requests:
-    cpu: 50m
-    memory: 50Mi
-  limits:
     cpu: 100m
-    memory: 100Mi
+    memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi
 
-prometheus:
-  monitor:
-    enabled: true
-    namespace: monitoring
-    interval: 15s
-
-livenessProbe:
-  enabled: true
-
-readinessProbe:
-  enabled: true
+tolerations:
+  - key: "node-role.kubernetes.io/master"
+    operator: "Exists"
+    effect: "NoSchedule"
