@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: prom/alertmanager
+  tag: v0.26.0
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 9093
+  nodePort: 30002
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi
+
+configMapName: alertmanager-config

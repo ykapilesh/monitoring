@@ -1,0 +1,6 @@
+apiVersion: v2
+name: alertmanager
+description: A local Helm chart for deploying Alertmanager based on your existing setup
+type: application
+version: 0.1.0
+appVersion: "v0.26.0"
