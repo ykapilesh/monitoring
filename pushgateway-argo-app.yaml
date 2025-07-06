@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/ykapilesh/monitoring.git'
     targetRevision: HEAD
-    path: monitoring/pushgateway
+    path: pushgateway
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: monitoring
