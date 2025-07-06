@@ -1,5 +1,7 @@
 replicaCount: 1
 
+fullnameOverride: alertmanager
+
 image:
   repository: prom/alertmanager
   tag: v0.26.0
