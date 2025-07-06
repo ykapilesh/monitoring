@@ -10,6 +10,11 @@ service:
   port: 3000
   nodePort: 30000
 
+serviceMonitor:
+  enabled: true
+  interval: 30s
+  scrapeTimeout: 10s
+
 persistence:
   enabled: true
   existingClaim: ""    # If you want to use existing PVC, set here
