@@ -1,0 +1,17 @@
+image:
+  repository: prom/blackbox-exporter
+  tag: v0.24.0
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  nodePort: 31115
+  port: 9115
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 100Mi
+  requests:
+    cpu: 50m
+    memory: 50Mi
