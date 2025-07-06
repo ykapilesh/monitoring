@@ -1,0 +1,42 @@
+replicaCount: 1
+
+image:
+  repository: docker.io/grafana/grafana
+  tag: "12.0.2"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 3000
+  nodePort: 30000
+
+persistence:
+  enabled: true
+  existingClaim: ""    # If you want to use existing PVC, set here
+  size: 1Gi
+  storageClass: ""     # optional: specify if you want a storage class
+
+admin:
+  userSecretName: grafana
+  userKey: admin-user
+  passwordKey: admin-password
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 250Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+initContainer:
+  image: busybox:1.31.1
+
+securityContext:
+  runAsUser: 1001
+  runAsGroup: 1001
+  fsGroup: 1001
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
