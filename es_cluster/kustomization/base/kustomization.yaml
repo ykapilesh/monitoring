@@ -1,0 +1,5 @@
+
+resources:
+  - ../../manifests/elasticsearch-app.yaml
+  - ../../manifests/kibana-app.yaml
+  - ../../manifests/ilm-policy.yaml
